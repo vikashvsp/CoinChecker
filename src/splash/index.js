@@ -1,7 +1,11 @@
 import { View, Text, Image, SafeAreaView, StyleSheet, TouchableOpacity } from 'react-native';
 import React from 'react';
 import Icon from "react-native-vector-icons/SimpleLineIcons"
+import { useNavigation } from '@react-navigation/native';
+import Menu from '../menu';
+
 const Splash = () => {
+     const navigation = useNavigation()
      return (
           <SafeAreaView style={styles.container}>
                <View style={styles.fullscreen}>
@@ -14,7 +18,7 @@ const Splash = () => {
                <TouchableOpacity
                     style={styles.button}
                     onPress={() => {
-                         // Handle button press action here
+                         navigation.navigate("menu")
                     }}
                >
                     <Text style={styles.buttonText}>Proceed</Text>
